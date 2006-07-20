@@ -9,7 +9,7 @@
 $plugin['name'] = 'Name Your Plugin!';
 $plugin['version'] = '0.1';
 $plugin['author'] = 'Your name here!';
-$plugin['author_uri'] = 'Your site here!';
+$plugin['author_uri'] = 'http://Your site here!';
 $plugin['description'] = 'Describe Your Plugin!';
 
 // Plugin types:
