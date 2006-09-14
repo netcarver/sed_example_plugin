@@ -18,7 +18,7 @@ $plugin['description'] = 'Describe Your Plugin!';
 // 2 = library; loaded only when include_plugin() or require_plugin() is called
 $plugin['type'] = 1; 
 
-@include_once('zem_tpl.php');
+@include_once('../zem_tpl.php');
 
 if (0) {
 ?>
