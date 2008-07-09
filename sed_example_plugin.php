@@ -1,37 +1,35 @@
 <?php
-// This is a PLUGIN TEMPLATE.
-// Copy this file to a new name like abc_myplugin.php.  Edit the code, then
-// run this file at the command line to produce a plugin for distribution:
-// $ php abc_myplugin.php > abc_myplugin-0.1.txt
+# This is a PLUGIN TEMPLATE.
+# Copy this file to a new name like abc_myplugin.php.  Edit the code, then
+# run this file at the command line to produce a plugin for distribution:
+# $ php abc_myplugin.php > abc_myplugin-0.1.txt
 
-// Plugin name is optional.  If unset, it will be extracted from the current
-// file name. Uncomment and edit this line to override:
+# Plugin name is optional.  If unset, it will be extracted from the current
+# file name. Uncomment and edit this line to override:
 $plugin['name'] = 'Name Your Plugin!';
 $plugin['version'] = '0.1';
 $plugin['author'] = 'Your name here!';
 $plugin['author_uri'] = 'http://Your site here!';
 $plugin['description'] = 'Describe Your Plugin!';
 
-// Plugin types:
-// 0 = regular plugin; loaded on the public web side only
-// 1 = admin plugin; loaded on both the public and admin side
-// 2 = library; loaded only when include_plugin() or require_plugin() is called
+# Plugin types:
+# 0 = regular plugin; loaded on the public web side only
+# 1 = admin plugin; loaded on both the public and admin side
+# 2 = library; loaded only when include_plugin() or require_plugin() is called
 $plugin['type'] = 1; 
 
 @include_once('../zem_tpl.php');
 
 # --- BEGIN PLUGIN CODE ---
 
-//
-// 	The following snippet is typical of an admin-side plugin. If you try compiling this plugin with the plugin set 
-// to type 0 (regular, user-only plugin) The compilation will fail with a message to check your plugin's type.
-// You can change the type at the head of this file, line 19 for the default file.
-//
+# 	The following snippet is typical of an admin-side plugin. If you try compiling this plugin with the plugin set 
+# to type 0 (regular, user-only plugin) The compilation will fail with a message to check your plugin's type.
+# You can change the type at the head of this file, line 19 for the default file.
 if( 'admin' == @txpinterface )
 	{
 	}
 
-// Your plugin code goes here.  No need to escape quotes.
+# Your plugin code goes here.  No need to escape quotes.
 function sed_hello( $atts )
 	{
 	extract( lAtts( array( 
