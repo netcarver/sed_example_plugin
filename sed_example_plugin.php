@@ -30,7 +30,7 @@ if( 'admin' == @txpinterface )
 	}
 
 # Your plugin code goes here.  No need to escape quotes.
-function sed_hello( $atts )
+function sed_ep_hello( $atts )
 	{
 	extract( lAtts( array( 
 		'name'=> 'Fred' 
@@ -42,20 +42,20 @@ function sed_hello( $atts )
 /*
 # --- BEGIN PLUGIN CSS ---
 <style type="text/css">
-div#sed_help td { vertical-align:top; }
-div#sed_help code { font-weight:bold; font: 105%/130% "Courier New", courier, monospace; background-color: #FFFFCC;}
-div#sed_help code.sed_code_tag { font-weight:normal; border:1px dotted #999; background-color: #f0e68c; display:block; margin:10px 10px 20px; padding:10px; }
-div#sed_help a:link, div#sed_help a:visited { color: blue; text-decoration: none; border-bottom: 1px solid blue; padding-bottom:1px;}
-div#sed_help a:hover, div#sed_help a:active { color: blue; text-decoration: none; border-bottom: 2px solid blue; padding-bottom:1px;}
-div#sed_help h1 { color: #369; font: 20px Georgia, sans-serif; margin: 0; text-align: center; }
-div#sed_help h2 { border-bottom: 1px solid black; padding:10px 0 0; color: #369; font: 17px Georgia, sans-serif; }
-div#sed_help h3 { color: #693; font: bold 12px Arial, sans-serif; letter-spacing: 1px; margin: 10px 0 0;text-transform: uppercase;}
+div#sed_example_plugin td { vertical-align:top; }
+div#sed_example_plugin code { font-weight:bold; font: 105%/130% "Courier New", courier, monospace; background-color: #FFFFCC;}
+div#sed_example_plugin code.sed_code_tag { font-weight:normal; border:1px dotted #999; background-color: #f0e68c; display:block; margin:10px 10px 20px; padding:10px; }
+div#sed_example_plugin a:link, div#sed_example_plugin a:visited { color: blue; text-decoration: none; border-bottom: 1px solid blue; padding-bottom:1px;}
+div#sed_example_plugin a:hover, div#sed_example_plugin a:active { color: blue; text-decoration: none; border-bottom: 2px solid blue; padding-bottom:1px;}
+div#sed_example_plugin h1 { color: #369; font: 20px Georgia, sans-serif; margin: 0; text-align: center; }
+div#sed_example_plugin h2 { border-bottom: 1px solid black; padding:10px 0 0; color: #369; font: 17px Georgia, sans-serif; }
+div#sed_example_plugin h3 { color: #693; font: bold 12px Arial, sans-serif; letter-spacing: 1px; margin: 10px 0 0;text-transform: uppercase;}
 </style>
 # --- END PLUGIN CSS ---
 -->
 <!-- HELP SECTION
 # --- BEGIN PLUGIN HELP ---
-<div id="sed_help">
+<div id="sed_example_plugin">
 
 h1(#manual). Example Plugin
 
@@ -65,7 +65,7 @@ v0.1 Features of the new template & compiler...&#8230;
 * The replacement template compiler 'zem_tpl.php' also takes care of checking if a client-only plugin references admin only features and stops the compilation if it does. *Why?* If the plugin is accessing admin-side resources, it should be marked as an admin side plugin, not a client-only plugin. This saves wasted time and effort if you happen to compile and install a plugin that you expect to work on the admin side but doesn't.
 
 
-h2(#tag). The @sed_hello@ tag.
+h2(#tag). The @sed_ep_hello@ tag.
 
 This is the only tag in this plugin.
 
