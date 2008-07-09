@@ -20,9 +20,28 @@ $plugin['type'] = 1;
 
 @include_once('../zem_tpl.php');
 
-if (0) {
-?>
-<!-- CSS SECTION
+# --- BEGIN PLUGIN CODE ---
+
+//
+// 	The following snippet is typical of an admin-side plugin. If you try compiling this plugin with the plugin set 
+// to type 0 (regular, user-only plugin) The compilation will fail with a message to check your plugin's type.
+// You can change the type at the head of this file, line 19 for the default file.
+//
+if( 'admin' == @txpinterface )
+	{
+	}
+
+// Your plugin code goes here.  No need to escape quotes.
+function sed_hello( $atts )
+	{
+	extract( lAtts( array( 
+		'name'=> 'Fred' 
+		), $atts));
+
+	return "Hello $name!".br.n; 
+	}
+# --- END PLUGIN CODE ---
+/*
 # --- BEGIN PLUGIN CSS ---
 <style type="text/css">
 div#sed_help td { vertical-align:top; }
@@ -60,29 +79,5 @@ This is the only tag in this plugin.
 
 </div>
 # --- END PLUGIN HELP ---
--->
-<?php
-}
-# --- BEGIN PLUGIN CODE ---
-
-
-//
-// 	The following snippet is typical of an admin-side plugin. If you try compiling this plugin with the plugin set 
-// to type 0 (regular, user-only plugin) The compilation will fail with a message to check your plugin's type.
-// You can change the type at the head of this file, line 19 for the default file.
-//
-if( 'admin' == @txpinterface )
-	{
-	}
-
-// Your plugin code goes here.  No need to escape quotes.
-function sed_hello( $atts )
-	{
-	extract( lAtts( array( 
-		'name'=> 'Fred' 
-		), $atts));
-
-	return "Hello $name!".br.n; 
-	}
-# --- END PLUGIN CODE ---
+*/
 ?>
