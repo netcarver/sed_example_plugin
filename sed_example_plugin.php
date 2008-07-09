@@ -36,7 +36,7 @@ function sed_hello( $atts )
 		'name'=> 'Fred' 
 		), $atts));
 
-	return "Hello $name!".br.n; 
+	return 'Hello '.$name.'!'.br.n; 
 	}
 # --- END PLUGIN CODE ---
 /*
