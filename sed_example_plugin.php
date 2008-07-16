@@ -1,45 +1,37 @@
 <?php
-# This is a PLUGIN TEMPLATE.
-# Copy this file to a new name like abc_myplugin.php.  Edit the code, then
-# run this file at the command line to produce a plugin for distribution:
-# $ php abc_myplugin.php > abc_myplugin-0.1.txt
-
-# Plugin name is optional.  If unset, it will be extracted from the current
-# file name. Uncomment and edit this line to override:
-$plugin['name'] = 'Name Your Plugin!';
+# --- BEGIN PLUGIN META ---
+$plugin['name'] = 'sed_example'; # Name Your Plugin!
 $plugin['version'] = '0.1';
 $plugin['author'] = 'Your name here!';
 $plugin['author_uri'] = 'http://Your site here!';
 $plugin['description'] = 'Describe Your Plugin!';
-
-# Plugin types:
-# 0 = regular plugin; loaded on the public web side only
-# 1 = admin plugin; loaded on both the public and admin side
-# 2 = library; loaded only when include_plugin() or require_plugin() is called
-$plugin['type'] = 1; 
-
-@include_once('../zem_tpl.php');
-
+$plugin['type'] = 1;
+$plugin['install'] = 'sed_ex_install';
+$plugin['cleanup'] = 'sed_ex_cleanup';
+# --- END PLUGIN META ---
 # --- BEGIN PLUGIN CODE ---
-
-# 	The following snippet is typical of an admin-side plugin. If you try compiling this plugin with the plugin set 
-# to type 0 (regular, user-only plugin) The compilation will fail with a message to check your plugin's type.
-# You can change the type at the head of this file, line 19 for the default file.
-if( 'admin' == @txpinterface )
+if( 'public' == @txpinterface )
+	{
+	}
+	
+function sed_ex_install()
 	{
 	}
 
-# Your plugin code goes here.  No need to escape quotes.
-function sed_ep_hello( $atts )
+function sed_ex_cleanup()
+	{
+	}
+
+function sed_ex_hello( $atts )
 	{
 	extract( lAtts( array( 
 		'name'=> 'Fred' 
 		), $atts));
 
-	return 'Hello '.$name.'!'.br.n; 
+	return graf("Hello $name!").n;
 	}
 # --- END PLUGIN CODE ---
-/*
+?>
 # --- BEGIN PLUGIN CSS ---
 <style type="text/css">
 div#sed_example_plugin td { vertical-align:top; }
@@ -52,15 +44,14 @@ div#sed_example_plugin h2 { border-bottom: 1px solid black; padding:10px 0 0; co
 div#sed_example_plugin h3 { color: #693; font: bold 12px Arial, sans-serif; letter-spacing: 1px; margin: 10px 0 0;text-transform: uppercase;}
 </style>
 # --- END PLUGIN CSS ---
--->
-<!-- HELP SECTION
 # --- BEGIN PLUGIN HELP ---
-<div id="sed_example_plugin">
+ <div id="sed_example_plugin">
 
 h1(#manual). Example Plugin
 
 v0.1 Features of the new template & compiler...&#8230;
 
+* It doesn't need to 'include' it's compiler.
 * This plugin template has a special section for storing the Help section's CSS. This section doesn't get pulled through the textile mangler, it simply gets appended at the head of your help section so you can style it properly.
 * The replacement template compiler 'zem_tpl.php' also takes care of checking if a client-only plugin references admin only features and stops the compilation if it does. *Why?* If the plugin is accessing admin-side resources, it should be marked as an admin side plugin, not a client-only plugin. This saves wasted time and effort if you happen to compile and install a plugin that you expect to work on the admin side but doesn't.
 
@@ -75,7 +66,5 @@ This is the only tag in this plugin.
 *Emphasized items* have been added or changed since the last release.
 -Struck out items- have been removed since the last release.
 
-</div>
+ </div>
 # --- END PLUGIN HELP ---
-*/
-?>
