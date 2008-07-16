@@ -51,12 +51,13 @@ h1(#manual). Example Plugin
 
 v0.1 Features of the new template & compiler...&#8230;
 
+* Placeholder install/cleanup routines
 * It doesn't need to 'include' it's compiler.
 * This plugin template has a special section for storing the Help section's CSS. This section doesn't get pulled through the textile mangler, it simply gets appended at the head of your help section so you can style it properly.
 * The replacement template compiler 'zem_tpl.php' also takes care of checking if a client-only plugin references admin only features and stops the compilation if it does. *Why?* If the plugin is accessing admin-side resources, it should be marked as an admin side plugin, not a client-only plugin. This saves wasted time and effort if you happen to compile and install a plugin that you expect to work on the admin side but doesn't.
 
 
-h2(#tag). The @sed_ep_hello@ tag.
+h2(#tag). The @sed_ex_hello@ tag.
 
 This is the only tag in this plugin.
 
