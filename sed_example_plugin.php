@@ -31,7 +31,9 @@ function sed_ex_hello( $atts )
 	return graf("Hello $name!").n;
 	}
 # --- END PLUGIN CODE ---
+if(0) {
 ?>
+<!-- /*
 # --- BEGIN PLUGIN CSS ---
 <style type="text/css">
 div#sed_example_plugin td { vertical-align:top; }
@@ -69,3 +71,8 @@ This is the only tag in this plugin.
 
  </div>
 # --- END PLUGIN HELP ---
+*/
+-->
+<?php
+}
+?>
