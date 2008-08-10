@@ -1,13 +1,13 @@
 <?php
 # --- BEGIN PLUGIN META ---
-$plugin['name'] = 'sed_example'; # Name Your Plugin!
-$plugin['version'] = '0.1';
-$plugin['author'] = 'Your name here!';
-$plugin['author_uri'] = 'http://Your site here!';
-$plugin['description'] = 'Describe Your Plugin!';
-$plugin['type'] = 1;
-$plugin['install'] = 'sed_ex_install';
-$plugin['cleanup'] = 'sed_ex_cleanup';
+$plugin = array(
+'name'=>'sed_example', # Name Your Plugin!
+'version'=>'0.1',
+'author'=>'Your name here!',
+'author_uri'=>'http://Your site here!',
+'description'=>'Describe Your Plugin!',
+'type'=>1,	# Use 3 for admin-only in Txp 4.0.7+
+);
 # --- END PLUGIN META ---
 # --- BEGIN PLUGIN CODE ---
 if( 'public' == @txpinterface )
